@@ -36,7 +36,7 @@ int CheckTempStability()
     int isTemparaturestable;
     
     if (Temperature<Temparature_Specification.BatteryDataLowerLimit || Temperature>Temparature_Specification.BatteryDataUpperLimit)
-    {
+    {   
       isTemparaturestable = BATTERY_HEALTH_NOT_OK;
     }
     /* Check to Notify  Warnings */

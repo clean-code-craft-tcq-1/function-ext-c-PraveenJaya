@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "BMS_BatteryCheck.h"
 
+int language = LANGUAGE_GERMAN;
 
 const char *BatteryHealthMessage[] =
 {
@@ -15,8 +16,6 @@ const char *BatteryHealthMessageGerman[] =
     "ist stabil"
     "erreicht instabil! Warnruf"
 };
-
-int language = LANGUAGE_GERMAN;
 
 /**
 ***************************************************************************************************
@@ -54,4 +53,6 @@ float GetWarningLowerLimit(float val)
     float lowerLimit = (val + ((val * BATTERY_WARNING_PERCENTAGE)/100));
     return lowerLimit;
 }
+
+
 
