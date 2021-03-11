@@ -25,6 +25,15 @@ int IsTemperatureStable(float Temperature)
     int isTemparaturestable = BATTERY_HEALTH_OK;
     float tempUpperWarningLimit = GetWarningUpperLimit(Temperature);
     float tempLowWarningLimit = GetWarningLowerLimit(Temperature);
+    isTemparaturestable = CheckTempStability(Temperature);
+        
+    PrintBatteryHealthStatus(Temparature_Specification,isTemparaturestable );
+    return isTemparaturestable;
+}
+
+int CheckTempStability()
+{
+    int isTemparaturestable;
     
     if (Temperature<Temparature_Specification.BatteryDataLowerLimit || Temperature>Temparature_Specification.BatteryDataUpperLimit)
     {
@@ -36,9 +45,6 @@ int IsTemperatureStable(float Temperature)
       isTemparaturestable =  BATTERY_WARNING;
     }
     
+    return isTemparaturestablel
     
-    
-    
-    PrintBatteryHealthStatus(Temparature_Specification,isTemparaturestable );
-    return isTemparaturestable;
 }
