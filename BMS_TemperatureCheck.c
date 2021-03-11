@@ -23,8 +23,8 @@ BatteryData_t Temparature_Specification = {
 int IsTemperatureStable(float Temperature)
 {
     int isTemparaturestable = BATTERY_HEALTH_OK;
-    float tempUpperWarningLimit = ((Temparature_Specification.BatteryDataUpperLimit - ((Temparature_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
-    float tempLowWarningLimit = ((Temparature_Specification.BatteryDataLowerLimit + ((Temparature_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+    float tempUpperWarningLimit = (Temparature_Specification.BatteryDataUpperLimit - ((Temparature_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+    float tempLowWarningLimit = (Temparature_Specification.BatteryDataLowerLimit + ((Temparature_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
     
     if (Temperature<Temparature_Specification.BatteryDataLowerLimit || Temperature>Temparature_Specification.BatteryDataUpperLimit)
     {
