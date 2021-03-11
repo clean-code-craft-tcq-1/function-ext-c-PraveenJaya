@@ -21,10 +21,22 @@ BatteryData_t SOC_Specification = {
 int IsSocStable(float SOC)
 {
   int issocstable = BATTERY_HEALTH_OK;
+  
+  float issocUpperLimit = (SOC_Specification.BatteryDataUpperLimit - ((SOC_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+  float issocLowerLimit = (SOC_Specification.BatteryDataLowerLimit + ((SOC_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+  
+  
   if(SOC<SOC_Specification.BatteryDataLowerLimit || SOC>SOC_Specification.BatteryDataUpperLimit )
   {
       issocstable = BATTERY_HEALTH_NOT_OK;
   }
+  /* Check to Notify  Warnings */
+  else if (SOC < issocLowerLimit || SOC > issocUpperLimit)
+  {
+      issocstable =  BATTERY_WARNING;
+  }
+
+  
   PrintBatteryHealthStatus(SOC_Specification,issocstable);
   return issocstable;
 }

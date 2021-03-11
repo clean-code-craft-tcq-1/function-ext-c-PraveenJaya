@@ -30,7 +30,6 @@ int IschargeRateStable(float chargeRate)
   {
             isChargeRatestable = BATTERY_HEALTH_NOT_OK;
   }
-  
   /* Check to Notify  Warnings */
   else if (chargeRate < chargeLowerWarningLimit || chargeRate > chargeUpperWarningLimit)
   {
