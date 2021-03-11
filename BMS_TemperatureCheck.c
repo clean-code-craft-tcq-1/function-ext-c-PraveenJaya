@@ -31,7 +31,7 @@ int IsTemperatureStable(float Temperature)
     return isTemparaturestable;
 }
 
-int CheckTempStability()
+int CheckTempStability(Temperature)
 {
     int isTemparaturestable;
     
@@ -48,3 +48,4 @@ int CheckTempStability()
     return isTemparaturestablel
     
 }
+
