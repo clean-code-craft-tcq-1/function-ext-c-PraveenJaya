@@ -22,9 +22,19 @@ BatteryData_t ChargeRate_Specification = {
 int IschargeRateStable(float chargeRate)
 {
   int isChargeRatestable = BATTERY_HEALTH_OK;
+  
+  float chargeUpperWarningLimit = (ChargeRate_Specification.BatteryDataUpperLimit - ((ChargeRate_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+  float chargeLowerWarningLimit = (ChargeRate_Specification.BatteryDataLowerLimit + ((ChargeRate_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+  
   if(chargeRate<ChargeRate_Specification.BatteryDataLowerLimit || chargeRate>ChargeRate_Specification.BatteryDataUpperLimit )
   {
             isChargeRatestable = BATTERY_HEALTH_NOT_OK;
+  }
+  
+  /* Check to Notify  Warnings */
+  else if (chargeRate < chargeLowerWarningLimit || chargeRate > chargeUpperWarningLimit)
+  {
+      isChargeRatestable =  BATTERY_WARNING;
   }
   
   PrintBatteryHealthStatus(ChargeRate_Specification,isChargeRatestable );
