@@ -18,6 +18,8 @@ float GetWarningUpperLimit(float val);
 
 float GetWarningLowerLimit(float val);
 
+int CheckTempStability()
+
 #define BATTERY_HEALTH_OK 1
 #define BATTERY_HEALTH_NOT_OK 0
 #define BATTERY_WARNING 2
