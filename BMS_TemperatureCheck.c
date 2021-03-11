@@ -25,13 +25,13 @@ int IsTemperatureStable(float Temperature)
     int isTemparaturestable = BATTERY_HEALTH_OK;
     float tempUpperWarningLimit = GetWarningUpperLimit(Temperature);
     float tempLowWarningLimit = GetWarningLowerLimit(Temperature);
-    isTemparaturestable = CheckTempStability(Temperature);
+    isTemparaturestable = CheckTempStability(Temperature,tempUpperWarningLimit,tempLowWarningLimit);
         
     PrintBatteryHealthStatus(Temparature_Specification,isTemparaturestable );
     return isTemparaturestable;
 }
 
-int CheckTempStability(Temperature)
+int CheckTempStability(float Temperature,float tempUpperWarningLimit,float tempLowWarningLimit)
 {
     int isTemparaturestable;
     
