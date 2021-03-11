@@ -14,6 +14,10 @@ int IschargeRateStable(float chargeRate);
 
 int IsBatteryOk(float temperature, float soc, float chargeRate);
 
+float GetWarningUpperLimit(float val);
+
+float GetWarningLowerLimit(float val);
+
 #define BATTERY_HEALTH_OK 1
 #define BATTERY_HEALTH_NOT_OK 0
 #define BATTERY_WARNING 2

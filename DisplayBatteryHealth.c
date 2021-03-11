@@ -6,6 +6,7 @@ const char *BatteryHealthMessage[] =
 {
     "is Unstable! Take Action Immediately!!!",
     "is Stable"
+    "is Reaching Unstable! Warning call"
 };
 
 
@@ -26,3 +27,16 @@ void PrintBatteryHealthStatus(BatteryData_t BatteryData, int IndexOfBatteryHealt
 {
     printf("%s %s \n", BatteryData.BatteryParticular, BatteryHealthMessage[IndexOfBatteryHealthMessage]);
 }
+
+float GetWarningUpperLimit(float val)
+{
+    float upperLimit = (val - ((val * BATTERY_WARNING_PERCENTAGE)/100));
+    return upperLimit;
+}
+
+float GetWarningLowerLimit(float val)
+{
+    float lowerLimit = (val + ((val * BATTERY_WARNING_PERCENTAGE)/100));
+    return lowerLimit;
+}
+

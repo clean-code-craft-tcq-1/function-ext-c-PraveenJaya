@@ -21,5 +21,6 @@ int IsBatteryOk(float temperature, float soc, float chargeRate) {
   istemparatureok = IsTemperatureStable(temperature);
   issocok = IsSocStable(soc);
   ischargerateok = IschargeRateStable(chargeRate);
+  
   return ( istemparatureok && issocok && ischargerateok);
 }

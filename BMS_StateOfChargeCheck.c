@@ -22,8 +22,8 @@ int IsSocStable(float SOC)
 {
   int issocstable = BATTERY_HEALTH_OK;
   
-  float issocUpperLimit = (SOC_Specification.BatteryDataUpperLimit - ((SOC_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
-  float issocLowerLimit = (SOC_Specification.BatteryDataLowerLimit + ((SOC_Specification.BatteryDataUpperLimit * BATTERY_WARNING_PERCENTAGE)/100));
+  float issocUpperLimit = GetWarningUpperLimit(SOC);
+  float issocLowerLimit = GetWarningLowerLimit(SOC);
   
   
   if(SOC<SOC_Specification.BatteryDataLowerLimit || SOC>SOC_Specification.BatteryDataUpperLimit )
