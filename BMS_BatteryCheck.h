@@ -23,3 +23,6 @@ float GetWarningLowerLimit(float val);
 #define BATTERY_WARNING 2
 
 #define BATTERY_WARNING_PERCENTAGE 5
+
+#define LANGUAGE_ENGLISH 0
+#define LANGUAGE_GERMAN  1

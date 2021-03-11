@@ -9,6 +9,14 @@ const char *BatteryHealthMessage[] =
     "is Reaching Unstable! Warning call"
 };
 
+const char *BatteryHealthMessageGerman[] =
+{
+    "ist instabil! Sofort handeln !!!",
+    "ist stabil"
+    "erreicht instabil! Warnruf"
+};
+
+int language = LANGUAGE_GERMAN;
 
 /**
 ***************************************************************************************************
@@ -25,7 +33,14 @@ const char *BatteryHealthMessage[] =
 */
 void PrintBatteryHealthStatus(BatteryData_t BatteryData, int IndexOfBatteryHealthMessage)
 {
-    printf("%s %s \n", BatteryData.BatteryParticular, BatteryHealthMessage[IndexOfBatteryHealthMessage]);
+    if(language == LANGUAGE_ENGLISH)
+    {
+        printf("%s %s \n", BatteryData.BatteryParticular, BatteryHealthMessage[IndexOfBatteryHealthMessage]);
+    }
+    else if(language == LANGUAGE_GERMAN)
+    {
+        printf("%s %s \n", BatteryData.BatteryParticular, BatteryHealthMessageGerman[IndexOfBatteryHealthMessage]);
+    }
 }
 
 float GetWarningUpperLimit(float val)
