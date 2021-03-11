@@ -45,7 +45,7 @@ int CheckTempStability(float Temperature,float tempUpperWarningLimit,float tempL
       isTemparaturestable =  BATTERY_WARNING;
     }
     
-    return isTemparaturestablel
+    return isTemparaturestable;
     
 }
 
