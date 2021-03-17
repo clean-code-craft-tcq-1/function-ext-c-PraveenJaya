@@ -37,5 +37,7 @@ int IschargeRateStable(float chargeRate)
   }
   
   PrintBatteryHealthStatus(ChargeRate_Specification,isChargeRatestable );
+  Notify_BMSController(ChargeRate_Specification,isChargeRatestable);
+  
   return isChargeRatestable;
 }

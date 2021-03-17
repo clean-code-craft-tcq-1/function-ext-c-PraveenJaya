@@ -38,6 +38,8 @@ int IsSocStable(float SOC)
 
   
   PrintBatteryHealthStatus(SOC_Specification,issocstable);
+  Notify_BMSController(SOC_Specification,issocstable);
+  
   return issocstable;
 }
   

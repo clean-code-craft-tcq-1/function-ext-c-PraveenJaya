@@ -20,6 +20,8 @@ float GetWarningLowerLimit(float val);
 
 int CheckTempStability(float Temperature,float tempUpperWarningLimit,float tempLowWarningLimit);
 
+void Notify_BMSController(BatteryData_t BatteryData, int IndexOfBatteryHealthMessage);
+
 #define BATTERY_HEALTH_OK 1
 #define BATTERY_HEALTH_NOT_OK 0
 #define BATTERY_WARNING 2
