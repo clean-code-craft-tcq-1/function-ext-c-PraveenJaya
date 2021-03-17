@@ -25,7 +25,7 @@
  
  void Notify_BMSController(BatteryData_t BatteryData, int IndexOfBatteryHealthMessage)
  {
-     printf("Controller Message %s "BatteryData.BatteryParticular, )
+     printf("Controller Message %s "BatteryData.BatteryParticular);
      
  }
  
